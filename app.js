@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 require('dotenv').config();
-mongoose.connect(process.env.MONGODB_URI);
+// mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on('error', function(err) {
   console.error('MongoDB connection error: ' + err);
   process.exit(-1);
@@ -19,7 +19,7 @@ mongoose.connection.once('open', function() {
 
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var users = require('./routes/recipe');
 
 var app = express();
 
@@ -36,7 +36,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/recipe', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
