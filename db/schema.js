@@ -13,7 +13,7 @@ var RecipeSchema = new Schema({
   difficulty: Number,
   picture: String,
   //Change ingredients back to [IngredientsSchema]
-  ingredients: String,
+  ingredients: String
 });
 
 var RecipeModel = mongoose.model("Recipe", RecipeSchema);
