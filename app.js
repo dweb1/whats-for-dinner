@@ -5,6 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+require('dotenv').config();
+
+//Do we need to specify the MONGODB_URI??
+mongoose.connect(process.env.MONGODB_URI);
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 
