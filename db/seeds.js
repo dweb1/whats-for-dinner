@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-// mongoose.connect(process.env.MONGODB_URI);
-mongoose.connect('mongodb://localhost/whats-for-dinner')
+mongoose.connect(process.env.MONGODB_URI);
+// mongoose.connect('mongodb://localhost/whats-for-dinner')
 var Recipe = require('../models/recipe');
 var Ingredient = require('../models/ingredient')
 
