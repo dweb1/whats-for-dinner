@@ -42,15 +42,19 @@ router.post('/', function(req, res) {
 
 router.put('/:id/edit' , (req, res) => {
   const recipeId = req.params.id;
-  const newRecipe = req.body;
+  const newRecipeIngredient = req.body;
   Recipe.findById(recipeId)
         .then((recipe) => {
+        var oldRecipe = recipe
         console.log('Hit the promise')
-        recipe.ingredients.push(newRecipe)
-        console.log(recipe)
-        res.render('recipe/edit', {
-          recipe,
-        })
+        recipe.ingredients.push(newRecipeIngredient)
+        var newRecipe = recipe
+        Recipe.findByIdAndUpdate(oldRecipe, newRecipe, {new: true})
+          .then((recipe) => {
+            res.render('recipe/edit', {
+              recipe,
+            })
+          })
       })
       .catch((error) => {
         console.log('Error editing recipe');
