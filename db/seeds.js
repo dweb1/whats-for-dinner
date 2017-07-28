@@ -41,13 +41,13 @@ var pizza = new Recipe({
 friedEggs.save(function(err) {
   if (err) console.log(err);
 
-  console.log('danny created!');
+  console.log('Fried Eggs created!');
 });
 
 pizza.save(function(err) {
   if (err) console.log(err);
 
-  console.log('maren created!');
+  console.log('Pizza created!');
 });
 
 mongoose.connection.close();
