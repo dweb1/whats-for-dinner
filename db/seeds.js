@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 // mongoose.connect(process.env.MONGODB_URI);
 mongoose.connect('mongodb://localhost/whats-for-dinner')
 var Recipe = require('../models/recipe');
+var Ingredient = require('../models/ingredient')
 
 //SWITCH TO NATIVE promises
 mongoose.Promise = global.Promise;
@@ -23,7 +24,7 @@ var friedEggs = new Recipe({
   origin: 'Burns',
   difficulty: 1,
   picture: 'Insert Picture',
-  ingredients: 'Eggs'
+  ingredients: [{ name: 'Eggs', category: 'Dairy' }, { name: 'Butter', category: 'Dairy'}]
 });
 
 var pizza = new Recipe({
@@ -34,7 +35,7 @@ var pizza = new Recipe({
   origin: 'Italian',
   difficulty: 2,
   picture: 'Insert Picture',
-  ingredients: 'Frozen Pizza'
+  ingredients: [{ name: 'Frozen Pizza', category: 'Frozen'}]
 });
 
 friedEggs.save(function(err) {

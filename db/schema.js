@@ -7,7 +7,7 @@ mongoose.Promise = global.Promise;
 var IngredientSchema = new Schema({
   name: String,
   category: String,
-  linkToRecipes: String
+  // linkToRecipes: String
 });
 
 var RecipeSchema = new Schema({
@@ -19,7 +19,7 @@ var RecipeSchema = new Schema({
   difficulty: Number,
   picture: String,
   //Change ingredients back to [IngredientSchema]
-  ingredients: String
+  ingredients: [IngredientSchema]
 });
 
 
