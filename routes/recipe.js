@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
         res.render('recipe/index', {
           recipe: recipe,
           origin: recipe.origin,
-        })
+        });
       // console.log(recipe);
       // res.send(recipe);
     })
@@ -19,6 +19,19 @@ router.get('/', function(req, res) {
       console.log('Error Looking for recipe');
       console.log(error);
     })
+});
+
+//NEW ROUTE HERE
+
+//SHOW router
+router.get('/:id', function(req, res) {
+  const userIdToSearchFor = req.params.id;
+  console.log(userIdToSearchFor)
+  // res.send(userIdToSearchFor)
+  Recipe.findById(userIdToSearchFor)
+    .then((recipe) => {
+      res.send(recipe);
+    });
 });
 
 module.exports = router;
