@@ -11,6 +11,7 @@ var IngredientSchema = new Schema({
 });
 
 var RecipeSchema = new Schema({
+  name: String,
   directions: String,
   servings: Number,
   caloriesPerServing: Number,

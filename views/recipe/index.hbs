@@ -1,0 +1,8 @@
+<h1>Hello, User, are you hungry?</h1>
+
+{{#each recipe}}
+  <h3>{{this.name}}</h3>
+  <div>Origin: {{this.origin}}</div>
+  <a href="/recipe/{{this._id}}">View more about {{this.name}}</a>
+  <br>
+{{/each}}
