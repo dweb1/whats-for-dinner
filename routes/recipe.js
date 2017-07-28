@@ -18,10 +18,13 @@ router.get('/', function(req, res) {
     .catch((error) => {
       console.log('Error Looking for recipe');
       console.log(error);
-    })
+    });
 });
 
 //NEW ROUTE HERE
+router.get('/new', function(req, res) {
+  res.render('recipe/new')
+});
 
 //SHOW router
 router.get('/:id', function(req, res) {
