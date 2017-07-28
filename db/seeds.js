@@ -24,7 +24,18 @@ var friedEggs = new Recipe({
   origin: 'Burns',
   difficulty: 1,
   picture: 'Insert Picture',
-  ingredients: [{ name: 'Eggs', category: 'Dairy' }, { name: 'Butter', category: 'Dairy'}]
+  ingredients: [{ name: 'Eggs', category: 'Dairy' }]
+});
+
+var tacos = new Recipe({
+  directions: 'Put the ingredients into the shell',
+  servings: 2,
+  caloriesPerServing: 133,
+  totalDuration: 45,
+  origin: 'Mexican',
+  difficulty: 4,
+  picture: 'Insert Picture',
+  ingredients: [{ name: 'Ground Beef', category: 'Meat' }, { name: 'Cheese', category: 'Dairy' }, { name: 'Letture', category: 'Produce'}]
 });
 
 var pizza = new Recipe({
@@ -35,7 +46,7 @@ var pizza = new Recipe({
   origin: 'Italian',
   difficulty: 2,
   picture: 'Insert Picture',
-  ingredients: [{ name: 'Frozen Pizza', category: 'Frozen'}]
+  ingredients: []
 });
 
 friedEggs.save(function(err) {
@@ -48,6 +59,11 @@ pizza.save(function(err) {
   if (err) console.log(err);
 
   console.log('Pizza created!');
+});
+tacos.save(function(err) {
+  if (err) console.log(err);
+
+  console.log('Tacos created!');
 });
 
 mongoose.connection.close();
