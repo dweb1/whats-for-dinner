@@ -32,14 +32,42 @@ router.post('/', function(req, res) {
 
   Recipe.create(newRecipeInfo)
     .then((recipe) => {
-      res.render('recipe/index', {
-        recipe
-      })
+      res.redirect(`/recipe/${recipe.id}/edit`);
     })
     .catch((error) => {
       console.log('Error Looking for recipe');
       console.log(error);
     });
+})
+
+router.put('/:id/edit' , (req, res) => {
+  const recipeId = req.params.id;
+  const newRecipe = req.body;
+  Recipe.findByIdAndUpdate(recipeId, newRecipe, 
+      {new: true}
+      ).then((recipe) => {
+        res.redirect(`recipe/?{recipe.id}/edit`, {
+            recipe
+    })
+      .catch((error) => {
+        console.log('Error editing recipe');
+        console.log(error);
+    });
+  })
+})
+
+router.get('/:id/edit' , (req, res) => {
+  const recipeId = req.params.id;
+  Recipe.findById(recipeId)
+  .then((recipe) => {
+    res.render('recipe/edit', {
+      recipe,
+    })
+     .catch((error) => {
+        console.log('Error editing recipe');
+        console.log(error);
+    });
+  })
 })
 
 //SHOW router
