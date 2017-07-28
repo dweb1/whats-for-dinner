@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
       .then((recipe) => {
         res.render('recipe/index', {
           recipe: recipe,
-          origin: recipe.origin,
+          // origin: recipe.origin,
         });
       // console.log(recipe);
       // res.send(recipe);
@@ -27,10 +27,14 @@ router.get('/', function(req, res) {
 router.get('/:id', function(req, res) {
   const userIdToSearchFor = req.params.id;
   console.log(userIdToSearchFor)
-  // res.send(userIdToSearchFor)
+
   Recipe.findById(userIdToSearchFor)
     .then((recipe) => {
-      res.send(recipe);
+      res.render('recipe/show', {
+        recipe: recipe
+      })
+    //   res.send(recipe);
+
     });
 });
 
