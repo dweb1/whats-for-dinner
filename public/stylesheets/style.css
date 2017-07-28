@@ -1,8 +1,20 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background: url("http://i.imgur.com/AjKUf6O.png");
 }
 
 a {
-  color: #00B7FF;
+	color: #00B7FF;
+}
+
+.teal {
+	height: 75px;
+}
+
+.recipe {
+	background-color: white;
+}
+
+.indivRecipe {
+	background-color: white
 }
