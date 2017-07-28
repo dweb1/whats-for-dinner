@@ -7,9 +7,13 @@ var Ingredient = require('../models/ingredient')
 /* GET users listing. */
 router.get('/', function(req, res) {
   Recipe.find({})
-      .then((recipes) => {
-      console.log(recipes);
-      res.send(recipes);
+      .then((recipe) => {
+        res.render('recipe/index', {
+          recipe: recipe,
+          origin: recipe.origin,
+        })
+      // console.log(recipe);
+      // res.send(recipe);
     })
     .catch((error) => {
       console.log('Error Looking for recipe');

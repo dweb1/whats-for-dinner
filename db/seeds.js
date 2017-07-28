@@ -17,7 +17,8 @@ Recipe.remove({}, function(err){
 });
 
 var friedEggs = new Recipe({
-  directions: 'Fry Eggs',
+  name: 'Fried Eggs',
+  directions: 'Fry the Eggs',
   servings: 2,
   caloriesPerServing: 80,
   totalDuration: 8,
@@ -28,6 +29,7 @@ var friedEggs = new Recipe({
 });
 
 var tacos = new Recipe({
+  name: 'Tacos',
   directions: 'Put the ingredients into the shell',
   servings: 2,
   caloriesPerServing: 133,
@@ -39,6 +41,7 @@ var tacos = new Recipe({
 });
 
 var pizza = new Recipe({
+  name: 'Pizza',
   directions: 'Put Frozen Pizza into Oven',
   servings: 4,
   caloriesPerServing: 300,
