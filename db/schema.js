@@ -6,7 +6,6 @@ mongoose.Promise = global.Promise;
 
 var IngredientSchema = new Schema({
   name: String,
-  category: String,
   // linkToRecipes: String
 });
 
