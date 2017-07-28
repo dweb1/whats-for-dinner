@@ -87,7 +87,7 @@ router.get('/:id', function(req, res) {
         recipe: recipe
       })
     //   res.send(recipe);
-
+      console.log(recipe.ingredients.name)
     });
 });
 

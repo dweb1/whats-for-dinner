@@ -8,5 +8,10 @@
   <li>Recipe Origin: {{recipe.origin}}</li>
   <li>Difficulty: {{recipe.difficulty}}</li>
   <li>IMAGE GOES HERE{{recipe.picture}}</li>
-  <li>Ingredients that dont work: {{recipe.ingredients}}</li>
+  <li>Ingredients that dont work:
+    <ul>
+      {{#each recipe.ingredients}}
+        <li>{{this.name}}</li>
+      {{/each}}
+    </ul></li>
 </ul>
