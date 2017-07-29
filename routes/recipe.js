@@ -35,10 +35,10 @@ router.get('/new', function(req, res) {
 //POST THE NEW INFORMATION
 router.post('/', function(req, res) {
   const newRecipeInfo = req.body;
-
+  const userId = req.params.userId
   Recipe.create(newRecipeInfo)
     .then((recipe) => {
-      res.redirect(`/recipe/${recipe.id}/edit`);
+      res.redirect(`../${userId}/recipe/${recipe.id}/edit`);
     })
     .catch((error) => {
       console.log('Error Looking for recipe');
@@ -60,6 +60,7 @@ router.put('/:id/edit' , (req, res) => {
           .then((recipe) => {
             res.render('recipe/edit', {
               recipe,
+              recipeId
             })
           })
       })
