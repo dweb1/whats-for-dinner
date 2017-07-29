@@ -1,15 +1,17 @@
 var express = require('express');
-var router = express.Router();
+var router = express.Router({mergeParams: true});
 
 var Recipe = require('../models/recipe');
 var Ingredient = require('../models/ingredient')
 
 /* GET users listing. */
 router.get('/', function(req, res) {
+  const userId = req.params.userId;
   Recipe.find({})
       .then((recipe) => {
         res.render('recipe/index', {
           recipe: recipe,
+          userId: userId
           // origin: recipe.origin,
         });
       // console.log(recipe);
@@ -62,8 +64,8 @@ router.put('/:id/edit' , (req, res) => {
     });
 })
 
-router.get('/:id/edit' , (req, res) => {
-  const recipeId = req.params.id;
+router.get('/:recipeId/edit' , (req, res) => {
+  const recipeId = req.params.recipeId;
   Recipe.findById(recipeId)
   .then((recipe) => {
     res.render('recipe/edit', {

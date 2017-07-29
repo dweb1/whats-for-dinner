@@ -39,7 +39,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/recipe', recipe);
+app.use('/user/:userId/recipe', recipe);
 app.use('/user', user);
 
 // catch 404 and forward to error handler
