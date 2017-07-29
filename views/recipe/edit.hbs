@@ -1,0 +1,26 @@
+<h1>Submit Ingredients for {{recipe.name}}</h1>
+
+<ul>
+  <li>Directions: {{recipe.directions}}</li>
+  <li>Servings: {{recipe.servings}}</li>
+  <li>Calories Per Serving: {{recipe.caloriesPerServing}}</li>
+  <li>Total Time Needed: {{recipe.totalDuration}}</li>
+  <li>Recipe Origin: {{recipe.origin}}</li>
+  <li>Difficulty: {{recipe.difficulty}}</li>
+  <li>IMAGE GOES HERE{{recipe.picture}}</li>
+</ul>
+
+<h3>Ingredients:</h3>
+	<ul>
+		{{#each recipe.ingredients}}
+ 		<li>{{this.name}}</li>
+		{{/each}}
+	</ul>
+
+
+<form action="../{{recipeId}}/edit?_method=PUT" method="POST">
+	<input type="text" name='name' placeholder="Ingredient" required><br>
+	<input type="submit" value="Click to Add Ingredient!">
+</form>
+
+<a href="../">Done adding ingredients!</a>

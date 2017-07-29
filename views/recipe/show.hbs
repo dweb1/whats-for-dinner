@@ -1,5 +1,6 @@
 <h1>{{recipe.name}}</h1>
 
+<div class = "indivRecipe">
 <ul>
   <li>Directions: {{recipe.directions}}</li>
   <li>Servings: {{recipe.servings}}</li>
@@ -7,6 +8,11 @@
   <li>Total Time Needed: {{recipe.totalDuration}}</li>
   <li>Recipe Origin: {{recipe.origin}}</li>
   <li>Difficulty: {{recipe.difficulty}}</li>
-  <li>IMAGE GOES HERE{{recipe.picture}}</li>
-  <li>Ingredients that dont work: {{recipe.ingredients}}</li>
+  <li>Ingredients:
+    <ul>
+      {{#each recipe.ingredients}}
+        <li>{{this.name}}</li>
+      {{/each}}
+    </ul></li>
 </ul>
+</div>

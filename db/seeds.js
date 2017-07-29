@@ -4,6 +4,7 @@ mongoose.connect(process.env.MONGODB_URI);
 // mongoose.connect('mongodb://localhost/whats-for-dinner')
 var Recipe = require('../models/recipe');
 var Ingredient = require('../models/ingredient');
+var User = require('../models/user');
 
 //SWITCH TO NATIVE promises
 mongoose.Promise = global.Promise;
@@ -12,6 +13,17 @@ mongoose.Promise = global.Promise;
 Recipe.remove({}, function(err){
   console.log(err);
 });
+
+User.remove({}, function(err){
+  console.log(err);
+});
+
+var michaeljordan = new User({
+  firstName: 'Michael',
+  lastName: 'Jordan',
+  email: 'mj@test.com',
+  recipes: []
+})
 
 var friedEggs = new Recipe({
   name: 'Fried Eggs',
@@ -65,6 +77,12 @@ tacos.save(function(err) {
   if (err) console.log(err);
 
   console.log('Tacos created!');
+});
+
+michaeljordan.save(function(err) {
+  if (err) console.log(err);
+
+  console.log('MJ created!');
 });
 
 mongoose.connection.close();

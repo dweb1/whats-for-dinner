@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var methodOverride = require('method-override');
 
 require('dotenv').config();
 mongoose.connect(process.env.MONGODB_URI);
@@ -20,8 +21,10 @@ mongoose.connection.once('open', function() {
 
 var index = require('./routes/index');
 var recipe = require('./routes/recipe');
+var user = require('./routes/user');
 
 var app = express();
+app.use(methodOverride('_method'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -36,7 +39,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/recipe', recipe);
+app.use('/user/:userId/recipe', recipe);
+app.use('/user', user);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

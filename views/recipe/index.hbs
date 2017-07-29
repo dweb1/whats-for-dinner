@@ -1,8 +1,16 @@
 <h1>Hello, User, are you hungry?</h1>
-
-{{#each recipe}}
-  <h3>{{this.name}}</h3>
-  <div>Origin: {{this.origin}}</div>
-  <a href="/recipe/{{this._id}}">View more about {{this.name}}</a>
-  <br>
-{{/each}}
+<div class="recipe-row">
+	{{#each recipe}}
+		<div class = "recipe">
+			<h3>{{this.name}}</h3>
+			<div><img src="http://fillmurray.com/300/300" alt="Test"></div>
+			<a href="/user/{{../userId}}/recipe/{{this._id}}">View more about {{this.name}}</a>
+			<br>
+		</div>
+	{{/each}}
+</div>
+<br>
+<br>
+<a href="/user/{{userId}}/recipe/new">
+	<button type="button" name="button">Create New Recipe</button>
+</a>
