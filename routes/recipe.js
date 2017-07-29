@@ -78,10 +78,10 @@ router.get('/:id/edit' , (req, res) => {
 
 //SHOW router
 router.get('/:id', function(req, res) {
-  const userIdToSearchFor = req.params.id;
-  console.log(userIdToSearchFor)
+  const recipeIdToSearchFor = req.params.id;
+  console.log(recipeIdToSearchFor)
 
-  Recipe.findById(userIdToSearchFor)
+  Recipe.findById(recipeIdToSearchFor)
     .then((recipe) => {
       res.render('recipe/show', {
         recipe: recipe
