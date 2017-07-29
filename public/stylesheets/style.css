@@ -13,8 +13,14 @@ a {
 
 .recipe {
 	background-color: white;
+	width: 300px;
 }
 
 .indivRecipe {
 	background-color: white
+}
+.recipe-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }

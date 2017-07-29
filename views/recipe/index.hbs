@@ -1,13 +1,14 @@
 <h1>Hello, User, are you hungry?</h1>
-
-{{#each recipe}}
-	<div class = "recipe">
-		<h3>{{this.name}}</h3>
-		<div>Origin: {{this.origin}}</div>
-		<a href="recipe/{{this._id}}">View more about {{this.name}}</a>
-		<br>
-	</div>
-{{/each}}
+<div class="recipe-row">
+	{{#each recipe}}
+		<div class = "recipe">
+			<h3>{{this.name}}</h3>
+			<div><img src="http://fillmurray.com/200/300" alt="Test"></div>
+			<a href="recipe/{{this._id}}">View more about {{this.name}}</a>
+			<br>
+		</div>
+	{{/each}}
+</div>
 <br>
 <br>
 <form action="user/{{userId}}/recipe/new" method="GET">
