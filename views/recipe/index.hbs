@@ -1,16 +1,22 @@
-<h1>Hello, User, are you hungry?</h1>
+<div id="topInfo">
+	<div>
+		<h1>Hello, User, are you hungry?</h1>
+	</div>
+	<div id="wrapper">
+		<a href="/user/{{userId}}/recipe/new">
+			<button type="button" name="button" class="btn-large teal darken-4" id="CreateNewButton">Create New Recipe</button>
+		</a>
+	</div>
+</div>
+<br>
+<br>
 <div class="recipe-row">
 	{{#each recipe}}
 		<div class = "recipe">
 			<h3>{{this.name}}</h3>
-			<div><img src="http://fillmurray.com/300/300" alt="Test"></div>
+			<div><a href="/user/{{../userId}}/recipe/{{this._id}}"><img class="recipeImage" src="http://fillmurray.com/200/200" alt="Recipe Image"></a></div>
 			<a href="/user/{{../userId}}/recipe/{{this._id}}">View more about {{this.name}}</a>
 			<br>
 		</div>
 	{{/each}}
 </div>
-<br>
-<br>
-<a href="/user/{{userId}}/recipe/new">
-	<button type="button" name="button">Create New Recipe</button>
-</a>
