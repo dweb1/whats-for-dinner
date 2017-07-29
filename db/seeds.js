@@ -49,6 +49,7 @@ var pizza = new Recipe({
   ingredients: []
 });
 
+
 friedEggs.save(function(err) {
   if (err) console.log(err);
 
