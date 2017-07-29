@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router({mergeParams: true});
 
 var Recipe = require('../models/recipe');
-var Ingredient = require('../models/ingredient')
+var Ingredient = require('../models/ingredient');
+var User = require('../models/user');
 
 /* GET users listing. */
 router.get('/', function(req, res) {
@@ -25,7 +26,10 @@ router.get('/', function(req, res) {
 
 //NEW ROUTE HERE
 router.get('/new', function(req, res) {
-  res.render('recipe/new')
+  const userId = req.params.userId;
+  res.render('recipe/new', {
+    userId: userId
+  })
 });
 
 //POST THE NEW INFORMATION
@@ -43,6 +47,7 @@ router.post('/', function(req, res) {
 })
 
 router.put('/:id/edit' , (req, res) => {
+  console.log('test');
   const recipeId = req.params.id;
   const newRecipeIngredient = req.body;
   Recipe.findById(recipeId)
@@ -66,10 +71,14 @@ router.put('/:id/edit' , (req, res) => {
 
 router.get('/:recipeId/edit' , (req, res) => {
   const recipeId = req.params.recipeId;
+  const userId = req.params.userId;
+  console.log(recipeId);
   Recipe.findById(recipeId)
   .then((recipe) => {
     res.render('recipe/edit', {
       recipe,
+      recipeId,
+      userId
     })
      .catch((error) => {
         console.log('Error editing recipe');
