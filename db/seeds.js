@@ -14,6 +14,10 @@ Recipe.remove({}, function(err){
   console.log(err);
 });
 
+User.remove({}, function(err){
+  console.log(err);
+});
+
 var michaeljordan = new User({
   firstName: 'Michael',
   lastName: 'Jordan',

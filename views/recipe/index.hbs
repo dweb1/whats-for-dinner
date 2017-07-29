@@ -3,14 +3,14 @@
 	{{#each recipe}}
 		<div class = "recipe">
 			<h3>{{this.name}}</h3>
-			<div><img src="http://fillmurray.com/200/300" alt="Test"></div>
-			<a href="../recipe/{{this._id}}">View more about {{this.name}}</a>
+			<div><img src="http://fillmurray.com/300/300" alt="Test"></div>
+			<a href="/user/{{../userId}}/recipe/{{this._id}}">View more about {{this.name}}</a>
 			<br>
 		</div>
 	{{/each}}
 </div>
 <br>
 <br>
-<a href="../{{userId}}/recipe/new">
+<a href="/user/{{userId}}/recipe/new">
 	<button type="button" name="button">Create New Recipe</button>
 </a>
