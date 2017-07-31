@@ -1,26 +1,96 @@
 body {
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-	/*background: url("http://i.imgur.com/AjKUf6O.png");*/
+	background: url("http://i.imgur.com/AjKUf6O.png") no-repeat;
+	height: 100%;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+h1, h3 {
+	background-color: rgba(0,0,0, .55);
+	border: 10px solid black;
+	color: white;
+	border-radius: 25px;
+	display: inline-block;
+}
+
+main {
+	flex: 1 0 auto;
 }
 
 a {
 	color: #00B7FF;
+	font-size: 50px;
 }
 
 .teal {
 	height: 75px;
 }
 
-.recipe {
-	background-color: white;
-	width: 300px;
+.recipeImage {
+	height: 300px;
+	width: 450px;
+	margin-bottom: 150px;
 }
 
-.indivRecipe {
-	background-color: white
+.recipe {
+	background-color: rgba(0,0,0, .55);
+	width: 750px;
+	height:750px;
+	border: 15px solid black;
+	color: white;
+	padding-bottom: 10px;
+	text-align: center;
+	margin-bottom: 30px;
+	border-radius: 25px;
 }
+
 .recipe-row {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	flex-wrap: wrap;
 }
+
+.page-footer{
+	background-color: #004d40;
+	text-align: center;
+}
+
+#wrapper {
+	margin: 50px;
+}
+
+.btn-large {
+	font-size: 20px;	
+}
+
+#topInfo {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.newForm {
+	background-color: rgba(0,0,0, .55);
+	border-radius: 25px;
+	border: 15px solid black;
+	color: white;
+	width: 800px;
+	text-align: center;
+}
+
+.indivRecipe {
+	background-color: rgba(0,0,0, .55);
+	border-radius: 25px;
+	border: 15px solid black;
+	color: white;
+	width: 900px;
+	font-size: 50px;
+	text-align: center;
+}
+
