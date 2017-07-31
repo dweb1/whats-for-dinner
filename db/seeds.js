@@ -33,19 +33,19 @@ var friedEggs = new Recipe({
   totalDuration: 8,
   origin: 'Burns',
   difficulty: 1,
-  picture: 'Insert Picture',
+  picture: 'http://i.imgur.com/WOEbEK0.jpg',
   ingredients: [{ name: 'Eggs', category: 'Dairy' }]
 });
 
 var tacos = new Recipe({
   name: 'Tacos',
-  directions: 'Put the ingredients into the shell',
+  directions: 'http://www.bettycrocker.com/recipes/easy-beef-tacos/426c261d-b2eb-4e22-9cba-0066f3335591',
   servings: 2,
   caloriesPerServing: 133,
   totalDuration: 45,
   origin: 'Mexican',
   difficulty: 4,
-  picture: 'Insert Picture',
+  picture: 'http://i.imgur.com/7h61E21.jpg',
   ingredients: [{ name: 'Ground Beef', category: 'Meat' }, { name: 'Cheese', category: 'Dairy' }, { name: 'Letture', category: 'Produce'}]
 });
 
@@ -57,7 +57,7 @@ var pizza = new Recipe({
   totalDuration: 20,
   origin: 'Italian',
   difficulty: 2,
-  picture: 'Insert Picture',
+  picture: 'http://i.imgur.com/ACCNhlV.jpg',
   ingredients: []
 });
 

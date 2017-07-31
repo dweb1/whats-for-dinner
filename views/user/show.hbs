@@ -12,13 +12,13 @@
 {{/each}}
 </ul> --}}
 
-<div class="recipe-row"> 
+<div class="recipe-row">
 	{{#each user.recipes}}
     <div class="row">
       <div class="col s4">
         <div class="card">
           <div class="card-image">
-            <img src="http://i.imgur.com/ShuYSTE.jpg">
+            <img src="{{this.picture}}">
               <span class="card-title">{{this.name}}</span>
           </div>
           <div class="card-content">
