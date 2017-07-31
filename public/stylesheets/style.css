@@ -1,7 +1,7 @@
 body {
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-	background: url("http://i.imgur.com/AjKUf6O.png") no-repeat;
 	height: 100%;
+	background: url("http://i.imgur.com/AjKUf6O.png") no-repeat;
 	background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -27,10 +27,6 @@ a {
 	font-size: 50px;
 }
 
-.teal {
-	height: 75px;
-}
-
 .recipeImage {
 	height: 300px;
 	width: 450px;
@@ -49,30 +45,12 @@ a {
 	border-radius: 25px;
 }
 
-.recipe-row {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	flex-wrap: wrap;
-}
-
-.page-footer{
-	background-color: #004d40;
-	text-align: center;
-}
-
 #wrapper {
 	margin: 50px;
 }
 
 .btn-large {
 	font-size: 20px;	
-}
-
-#topInfo {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
 }
 
 .newForm {
@@ -93,4 +71,27 @@ a {
 	font-size: 50px;
 	text-align: center;
 }
+
+
+.page-footer {
+    background-color: #004d40;
+}
+
+
+.teal {
+	height: 100px;
+}
+
+
+  .brand-logo {
+  	left: 30px;
+  	top: 25px;
+  }
+
+  .nav-items {
+  	font-size: 20px;
+  }
+
+
+
 
