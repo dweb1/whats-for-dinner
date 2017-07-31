@@ -17,40 +17,33 @@
 <div class="parallax-container">
     <div class="parallax"><img src="http://i.imgur.com/AjKUf6O.png"></div>
   </div> --}}
- </div>
-   <div>
+
+<div>
   <h1>Hello, {{userName}}, are you hungry?</h1>
-  </div>
-    <a href="/user/{{userId}}/recipe/new">
-      <button type="button" name="button" class="btn-large teal darken-4" id="CreateNewButton">Create New Recipe</button>
-    </a>
-  </div>
 </div>
+<a href="/user/{{userId}}/recipe/new">
+  <button type="button" name="button" class="btn-large teal darken-4" id="CreateNewButton">Create New Recipe</button>
+</a>
 <br>
 <br>
-
-
-
-
 
 <div class="recipe-row"> 
 	{{#each recipe}}
-	<!-- place for cards -->
-
-
-<div class="row">
-  <div class="col s4"><div class="card">
-    <div class="card-image">
-      <img src="http://i.imgur.com/ShuYSTE.jpg">
-        <span class="card-title">{{this.name}}</span>
+    <div class="row">
+      <div class="col s4">
+        <div class="card">
+          <div class="card-image">
+            <img src="http://i.imgur.com/ShuYSTE.jpg">
+              <span class="card-title">{{this.name}}</span>
           </div>
-            <div class="card-content">
-             </div>
-             <div class="card-action">
-              <a href="/user/{{../userId}}/recipe/{{this._id}}">View more about {{this.name}}</a>
-            </div>
+          <div class="card-content">
+          </div>
+          <div class="card-action">
+            <a href="/user/{{../userId}}/recipe/{{this._id}}">View more about {{this.name}}</a>
           </div>
         </div>
-	{{/each}}
+      </div>
+  {{/each}}
 </div>
+
 
