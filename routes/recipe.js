@@ -108,4 +108,15 @@ router.get('/:id', function(req, res) {
     });
 });
 
+router.get('/:recipeId/delete', (req, res) => {
+  const userId = req.params.userId;
+  const recipeIdToDelete = req.params.recipeId;
+  Recipe.findByIdAndRemove(recipeIdToDelete)
+        .then(() => {
+            console.log(`Successfully deleted recipe with ID ${recipeIdToDelete}!`)
+
+            res.redirect(`/user/${userId}/recipe`);
+        })
+})
+
 module.exports = router;
