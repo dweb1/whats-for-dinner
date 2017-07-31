@@ -5,6 +5,13 @@ body {
 	background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+	flex: 1;
 }
 
 a {
@@ -60,7 +67,7 @@ a {
 	justify-content: space-around;
 }
 
-#newRecipeForm {
+.newForm {
 	background-color: rgba(0,0,0, .55);
 	border-radius: 25px;
 	border: 15px solid black;
@@ -68,12 +75,3 @@ a {
 	width: 800px;
 	text-align: center;
 }
-
-/*#formDiv {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-content: center;
-	justify-content: center;
-	text-align: center
-}*/

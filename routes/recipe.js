@@ -8,20 +8,25 @@ var User = require('../models/user');
 /* GET users listing. */
 router.get('/', function(req, res) {
   const userId = req.params.userId;
-  Recipe.find({})
-      .then((recipe) => {
-        res.render('recipe/index', {
-          recipe: recipe,
-          userId: userId
-          // origin: recipe.origin,
+  User.findById(userId)
+    .then((user) => {
+      const userName = user.firstName;
+      Recipe.find({})
+        .then((recipe, user) => {
+          res.render('recipe/index', {
+            recipe: recipe,
+            userId: userId,
+            userName: userName
+            // origin: recipe.origin,
+          });
+        // console.log(recipe);
+        // res.send(recipe);
+      })
+        .catch((error) => {
+          console.log('Error Looking for recipe');
+          console.log(error);
         });
-      // console.log(recipe);
-      // res.send(recipe);
     })
-    .catch((error) => {
-      console.log('Error Looking for recipe');
-      console.log(error);
-    });
 });
 
 //NEW ROUTE HERE
