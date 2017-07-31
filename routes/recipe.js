@@ -80,6 +80,7 @@ router.put('/:id' , (req, res) => {
 router.put('/:id/edit' , (req, res) => {
   const recipeId = req.params.id;
   const newRecipeIngredient = req.body;
+  const userId = req.params.userId
   Recipe.findById(recipeId)
         .then((recipe) => {
         var oldRecipe = recipe
@@ -90,7 +91,8 @@ router.put('/:id/edit' , (req, res) => {
           .then((recipe) => {
             res.render('recipe/edit', {
               recipe,
-              recipeId
+              recipeId,
+              userId: userId
             })
           })
       })
@@ -109,7 +111,7 @@ router.get('/:recipeId/edit' , (req, res) => {
     res.render('recipe/edit', {
       recipe,
       recipeId,
-      userId
+      userId: userId
     })
      .catch((error) => {
         console.log('Error editing recipe');
@@ -121,12 +123,14 @@ router.get('/:recipeId/edit' , (req, res) => {
 //SHOW router
 router.get('/:id', function(req, res) {
   const recipeIdToSearchFor = req.params.id;
+  const userId = req.params.userId
   console.log(recipeIdToSearchFor)
 
   Recipe.findById(recipeIdToSearchFor)
     .then((recipe) => {
       res.render('recipe/show', {
-        recipe: recipe
+        recipe: recipe,
+        userId: userId
       })
     //   res.send(recipe);
       console.log(recipe.ingredients.name)
