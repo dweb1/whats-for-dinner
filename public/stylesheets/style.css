@@ -81,6 +81,7 @@ a {
 
 .page-footer {
     background-color: #004d40;
+    text-align: center;
 }
 
 
@@ -97,3 +98,19 @@ a {
   .nav-items {
   	font-size: 20px;
   }
+
+#CreateNewButton{
+	padding-top: 20px
+}
+.top-info{
+	display: flex;
+	justify-content: space-around;
+}
+
+
+
+
+
+
+
+
