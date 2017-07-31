@@ -10,13 +10,24 @@
 </div>
 <br>
 <br>
-<div class="recipe-row">
+<div class="recipe-row"> 
 	{{#each recipe}}
-		<div class = "recipe">
-			<h3>{{this.name}}</h3>
-			<div><a href="/user/{{../userId}}/recipe/{{this._id}}"><img class="recipeImage" src="http://fillmurray.com/200/200" alt="Recipe Image"></a></div>
-			<a href="/user/{{../userId}}/recipe/{{this._id}}">View more about {{this.name}}</a>
-			<br>
-		</div>
+	<!-- place for cards -->
+
+
+		<div class="row">
+  <div class="col s4"><div class="card">
+    <div class="card-image">
+      <img src="http://i.imgur.com/ShuYSTE.jpg">
+        <span class="card-title">{{this.name}}</span>
+          </div>
+            <div class="card-content">
+             </div>
+             <div class="card-action">
+              <a href="/user/{{../userId}}/recipe/{{this._id}}">View more about {{this.name}}</a>
+            </div>
+          </div>
+        </div>
 	{{/each}}
 </div>
+
