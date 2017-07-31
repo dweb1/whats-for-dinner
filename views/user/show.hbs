@@ -2,3 +2,8 @@
 <br>
 
 <a href="/user/{{user.id}}/recipe">Check out our recipes!</a>
+
+
+{{#each user.recipes}}
+	<div>{{this.name}}</div>
+{{/each}}

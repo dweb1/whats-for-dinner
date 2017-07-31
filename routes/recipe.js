@@ -51,8 +51,33 @@ router.post('/', function(req, res) {
     });
 })
 
+router.put('/:id' , (req, res) => {
+  const recipeId = req.params.id;
+  const userId = req.params.userId;
+  User.findById(userId)
+        .then((user) => {
+          const oldUser = user;
+          console.log(recipeId);
+          Recipe.findById(recipeId)
+            .then((recipe) => {
+              console.log(oldUser);
+              oldUser.recipes.push(recipe);
+              var newUser = oldUser;
+              console.log(newUser);
+              User.findByIdAndUpdate(oldUser, newUser, {new: true})
+              .then(() =>{
+                console.log('test 3');
+                res.redirect(`/user/${userId}`);
+              })
+            })
+        })
+        .catch((error) => {
+          console.log('Error editing recipe');
+          console.log(error);
+      });
+})
+
 router.put('/:id/edit' , (req, res) => {
-  console.log('test');
   const recipeId = req.params.id;
   const newRecipeIngredient = req.body;
   Recipe.findById(recipeId)
