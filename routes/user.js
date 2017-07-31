@@ -31,7 +31,8 @@ router.get('/:id', function(req, res) {
     .then((user) => {
       console.log(user)
       res.render('user/show', {
-        user: user
+        user: user,
+        userId: userIdToSearchFor
       });
     })
 
