@@ -10,7 +10,7 @@ body {
     flex-direction: column;
 }
 
-h1, h3 {
+h1, h3, p {
 	background-color: rgba(0,0,0, .55);
 	border: 10px solid black;
 	color: white;
@@ -18,8 +18,13 @@ h1, h3 {
 	display: inline-block;
 }
 
+p {
+	font-size: 30px;
+}
+
 main {
 	flex: 1 0 auto;
+	margin-left: 35px;
 }
 
 a {
@@ -50,7 +55,8 @@ a {
 }
 
 .btn-large {
-	font-size: 20px;	
+	font-size: 20px;
+	margin-bottom: 20px;
 }
 
 .newForm {
@@ -91,7 +97,3 @@ a {
   .nav-items {
   	font-size: 20px;
   }
-
-
-
-
