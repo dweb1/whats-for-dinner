@@ -1,5 +1,5 @@
 <h1>{{recipe.name}}</h1>
-  
+
   <div class="center-align row">
     <div class = "indivRecipe col s6">
       <ul>
@@ -9,10 +9,10 @@
         <li>Total Time Needed: {{recipe.totalDuration}}</li>
         <li>Recipe Origin: {{recipe.origin}}</li>
         <li>Difficulty: {{recipe.difficulty}}</li>
-        <li>Ingredients:
+        <li><h3>Ingredients:</h3>
           <ul>
             {{#each recipe.ingredients}}
-              <li>{{this.name}}</li>
+              <li><h4>-{{this.name}}</h4></li>
             {{/each}}
           </ul></li>
       </ul>
@@ -21,7 +21,7 @@
       <img class="responsive-img" src="{{recipe.picture}}" alt="Recipe Image">
   </div>
   </div>
-  
+
 
 <form action="../recipe/{{recipe._id}}?_method=PUT" method="POST"><input class="btn-large teal darken-4" type="submit" value="Favorite this recipe">
 </form>
