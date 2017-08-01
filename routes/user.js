@@ -35,8 +35,6 @@ router.get('/:id', function(req, res) {
         userId: userIdToSearchFor
       });
     })
-
-  // res.send(userId)
 });
 
 

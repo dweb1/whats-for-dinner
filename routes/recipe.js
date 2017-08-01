@@ -17,10 +17,7 @@ router.get('/', function(req, res) {
             recipe: recipe,
             userId: userId,
             userName: userName
-            // origin: recipe.origin,
           });
-        // console.log(recipe);
-        // res.send(recipe);
       })
         .catch((error) => {
           console.log('Error Looking for recipe');
