@@ -8,14 +8,20 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+		font-family: 'Open Sans', sans-serif;
 }
 
-h1, h3, p {
-	background-color: rgba(0,0,0, .55);
+h1, h3, p.heading {
+	background-color: rgba(0,77,64, .7);
 	border: 10px solid black;
 	color: white;
 	border-radius: 25px;
 	display: inline-block;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+	margin-right: 0;
+	color: #004D40;
 }
 
 p {
@@ -107,10 +113,10 @@ a {
 	justify-content: space-around;
 }
 
-
-
-
-
-
-
-
+.card-action {
+	font-size: 5px;
+	color: blue;
+}
+.homeAlign {
+	text-align: center;
+}

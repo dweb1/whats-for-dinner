@@ -1,7 +1,7 @@
 <h1>Welcome, {{user.firstName}}</h1>
 <br>
 
-<a href="/user/{{user.id}}/recipe">Check out our recipes!</a>
+<h3><a href="/user/{{user.id}}/recipe">Check out our recipes!</a></h3>
 <br>
 <br>
 
@@ -21,10 +21,8 @@
             <img src="{{this.picture}}">
               <span class="card-title">{{this.name}}</span>
           </div>
-          <div class="card-content">
-          </div>
           <div class="card-action">
-            <a href="/user/{{../userId}}/recipe/{{this._id}}">View more about {{this.name}}</a>
+            <a href="/user/{{../userId}}/recipe/{{this._id}}"><p class="flow-text">View more about {{this.name}}</p></a>
           </div>
         </div>
       </div>
