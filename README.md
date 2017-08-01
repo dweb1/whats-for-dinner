@@ -7,13 +7,15 @@
 * Jackie Irons
 
 ## Description
-What's for Dinner is a full-stack application  that allows users to create a personal account using your name and email. After the user account is created you wiil be able to create a regional recipes based on serving size, cooking time, difficulty, and calories per serving. Each recipe card will also include a image, directions, and ingredients of the food item. User will also be able to create favorite recipes. 
+What's for Dinner is a full-stack application  that allows users to create a personal account using your name and email. After the user account is created you wiil be able to create a regional recipes based on serving size, cooking time, difficulty, and calories per serving. Each recipe card will also include a image, directions, and ingredients of the food item. User will also be able to create favorite recipes.
 
 ## Unsolved Problems/Future Development
 * Authentication
 * Shopping Cart
 * Filter bar for index page
 * Remove from favorite list
+* Star rating for difficulty
+* Improve Card Layout on index page
 
 
 ## Technologies Used
@@ -29,9 +31,10 @@ What's for Dinner is a full-stack application  that allows users to create a per
 
 
 
-## Trello/MockingBird
+## Trello/MockingBird/ERD
 * [Trello](https://trello.com/b/H5kf4m20/recipes-project-2)
 * [Wireframes](https://gomockingbird.com/projects/ne6slte)
+* ![ERD](http://i.imgur.com/KKKTLj0.jpg?1)
 
 
 ## Project 2
